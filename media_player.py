@@ -519,6 +519,19 @@ def sysargs_to_mainargs():
 
 
 ### Main Function Call ###
+"""
+    __name__ is a built-in variable which evaluates to the name of the current module.
+
+    However, if a module is being run directly (as in media_player.py), then __name__ instead is set to the string "__main__".
+
+    Thus, you can test whether your script is being run directly or being imported by something else by testing if __name__ == '__main__':.
+
+    If the script is being imported into another module, the various function and class definitions it contains will be imported and the script will not be executed.
+
+    If the script is being run directly, on the other hand, the script will run.
+
+    This is a common idiom used in Python modules, allowing one to have a module that can double as a standalone script.
+"""
 if __name__ == "__main__":
     target_file, dbg_file, debug = sysargs_to_mainargs()
     main(target_file, dbg_file, debug)
