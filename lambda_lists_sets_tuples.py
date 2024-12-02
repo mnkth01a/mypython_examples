@@ -1,6 +1,7 @@
 """
 Lambda functions are used to create anonymous functions. These are small functions which are not defined with any name. They are generally used when you require a nameless function for a short period of time. Lambda functions are defined using the keyword lambda followed by the function arguments.
 """
+
 print("Lambda functions:", "\n")
 
 # Define a lambda function that takes two arguments, x and y, and returns their sum.
@@ -12,7 +13,6 @@ result = my_lambda(2, 3)
 # Print the result
 print("Result of lambda function x, y: x + y is", result)
 
-
 # Define a lambda function that takes a single argument, x, and returns the square of x.
 square = lambda x: x**2
 
@@ -21,7 +21,6 @@ result = square(5)
 
 # Print the result
 print("Result of lambda function x: x**2 is", result)
-
 
 # Define a lambda function that takes a single argument, x, and returns True if x is even and False otherwise.
 is_even = lambda x: x % 2 == 0
@@ -51,12 +50,17 @@ print("Print each number in the list:")
 for number in numbers:
 
     # Print the result
-    print('\t', '\t', number)
-    
+    print("\t", "\t", number)
+
+# Print a blank line
 print("\n")
 
+"""
+   Remove duplicates from a list by converting it to a set and back to a list.
+"""
 print("Removing duplicates from a list:")
-# Remove duplicates from a list.
+
+# Define a list with duplicates
 my_list = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 
 # Print the list with duplicates
@@ -66,6 +70,8 @@ print("List with duplicates:", my_list)
 my_set = set(my_list)
 
 # Convert the set back to a list
+# Can also be done in one line as follows:
+# my_list = list(set(my_list))
 my_list = list(my_set)
 
 # Print the list without duplicates
@@ -159,7 +165,13 @@ def calculate_string_lengths(strings_list):
 
 
 # Define a list of strings
-strings_list = ["apple", "banana", "cherry", "expialidocious", "supercalifragilisticexpialidocious"]
+strings_list = [
+    "apple",
+    "banana",
+    "cherry",
+    "expialidocious",
+    "supercalifragilisticexpialidocious",
+]
 
 # Print the list of strings
 print("List of strings:", strings_list)
