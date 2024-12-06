@@ -66,5 +66,3 @@ if "Alice" in ages:
     print("Alice is in the dictionary")
 else:
     print("Alice is not in the dictionary")
-
-
