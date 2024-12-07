@@ -16,7 +16,7 @@ import urllib.request
 
 
 # Set the URL you want to send the GET request to
-url = "http://www.google.com"
+url = "http://www.example.com"
 
 # Create a GET request object
 request = urllib.request.Request(url)
@@ -28,7 +28,7 @@ response = urllib.request.urlopen(request)
 print(response.read(), "\n")
 
 # Use urllib.request.urlretrieve() function to download the data and save it to a file
-urllib.request.urlretrieve(url, "google.html")
+urllib.request.urlretrieve(url, "example.html")
 
 
 '''
@@ -83,3 +83,49 @@ person_json = json.dumps(person_dict)
 
 # Print JSON object
 print(person_json, "\n")
+
+
+"""
+   Hosting a webserver in Python
+   
+   1. Import the http.server module
+   2. Create a class that inherits from http.server.BaseHTTPRequestHandler
+   3. Define the do_GET method to handle GET requests
+   4. Create a server object
+   5. Start the server
+
+"""
+
+import http.server
+import socketserver
+
+# Define the server address and port
+server_address = ("localhost", 8000)
+
+
+# Create a request handler class
+class RequestHandler(http.server.BaseHTTPRequestHandler):
+    # Handle GET requests
+    def do_GET(self):
+        # Send response status code
+        self.send_response(200)
+
+        # Send headers
+        self.send_header(
+           "Content-type",
+           "text/plain"
+           )
+        
+        self.end_headers()
+
+        # Write content as utf-8 data
+        self.wfile.write("Hello there!".encode())
+
+
+# Create an http server object
+server = http.server.HTTPServer(server_address, RequestHandler)
+
+# Run the server
+server.serve_forever()
+
+# To stop the server, press Ctrl + C in the terminal window where the server is running
