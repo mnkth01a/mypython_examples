@@ -16,7 +16,7 @@ import urllib.request
 
 
 # Set the URL you want to send the GET request to
-url = "http://www.example.com"
+url = "http://www.google.com"
 
 # Create a GET request object
 request = urllib.request.Request(url)
@@ -28,7 +28,7 @@ response = urllib.request.urlopen(request)
 print(response.read(), "\n")
 
 # Use urllib.request.urlretrieve() function to download the data and save it to a file
-urllib.request.urlretrieve(url, "example.html")
+urllib.request.urlretrieve(url, "google.html")
 
 
 '''
