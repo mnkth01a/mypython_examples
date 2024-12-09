@@ -118,8 +118,12 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
         
         self.end_headers()
 
-        # Write content as utf-8 data
-        self.wfile.write("Hello there!".encode())
+        # Encode and write the response to the client
+        self.wfile.write("\n\tHello there!".encode())
+        self.wfile.write("\n\t".encode())
+        self.wfile.write("\n\tWelcome to the server!".encode())
+        self.wfile.write("\n\t".encode())
+        self.wfile.write("\n\tThis is a test.".encode())
 
 
 # Create an http server object
