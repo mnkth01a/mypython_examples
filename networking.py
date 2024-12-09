@@ -119,11 +119,7 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
 
         # Encode and write the response to the client
-        self.wfile.write("\n\tHello there!".encode())
-        self.wfile.write("\n\t".encode())
-        self.wfile.write("\n\tWelcome to the server!".encode())
-        self.wfile.write("\n\t".encode())
-        self.wfile.write("\n\tThis is a test.".encode())
+        self.wfile.write("\n\t\n\tHello there!\n\t\n\tWelcome to the server!\n\t\n\tThis is a test.".encode())
 
 
 # Create an http server object
