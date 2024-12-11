@@ -133,6 +133,9 @@ venv.bak/
 # Media files
 *.mp4
 
+# Text files
+*.txt
+
 # Spyder project settings
 .spyderproject
 .spyproject
