@@ -5,13 +5,17 @@
 """
 
 import os
+import shutil
 
-# If the directory doc2 does not exist, create it
-if not os.path.exists("doc2"):
-    os.makedirs("doc2")
+# If the directory doc2 does not exist, create it and the child directory text_files/doc2
+if not os.path.exists("text_files"):
+    os.makedirs("text_files/doc2")
+
+# Change to the child directory text_files
+os.chdir("text_files/doc2")
 
 ### Set variable fn to the file path ###
-fn = "doc2/file_rw.txt"
+fn = "file_rw.txt"
 
 with open(fn, "w") as file:
     file.write("Hello, World!")  # Write a string to the file
@@ -29,11 +33,11 @@ with open(fn, "r") as file:
     )  # Read the rest of the file and print its contents with a newline character
 
 # Remove the file
-os.remove(fn)
+# os.remove(fn)
 
-# Remove the directory
-import shutil
+# Change to the parent directory
+os.chdir("..")
 
-shutil.rmtree("doc2")
+# shutil.rmtree("doc2")
 
 # End of file_rw.py
